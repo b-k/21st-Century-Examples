@@ -1,8 +1,6 @@
 21st-Century-Examples
 =====================
 
-[ Until I actually populate this repository, get the examples from http://examples.oreilly.com/0636920025108/ .]
-
 Dear Reader,
 
 Here are all of the examples from _21st Century C_ by Ben Klemens [ http://tinyurl.com/C-for-moderns ]. You'll notice that the captions for all of the examples in the text end in a filename in parens, like (string_utilities.c); that name is referring to the file here.

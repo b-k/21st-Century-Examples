@@ -1,0 +1,7 @@
+all-local: pvnrt
+
+pvnrt:
+	CFLAGS='@CFLAGS@' python setup.py build
+
+install-exec-hook:
+	python setup.py install

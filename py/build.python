@@ -1,0 +1,23 @@
+# This is a script to set up the Python demo. As per the text, there is
+# a main directory with the C code, and a subdirectory with the Python part.
+# Once those components are set up, run autoreconf to generate the components,
+# then the usual ./configure; make; sudo make install.
+
+
+if [ -e autodemo ]; then sudo rm -r autodemo; fi
+mkdir -p autodemo
+cp ../ideal.h ../ideal.c Makefile.am configure.ac autodemo/
+cd autodemo
+touch NEWS README AUTHORS ChangeLog    #still cheating.
+mkdir py
+cp ../setup.py ../ideal.py.c py/
+cp ../Makefile.py.am py/Makefile.am
+
+autoreconf -iv
+
+echo ----------configure------------
+./configure
+echo ----------make------------
+make
+echo ----------install------------
+sudo make install

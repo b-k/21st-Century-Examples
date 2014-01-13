@@ -1,0 +1,6 @@
+if [ ! -e moby ] ; then
+ curl -A "Mozilla/4.0" http://www.gutenberg.org/cache/epub/2701/pg2701.txt  \
+     | sed -e '1,/START OF THIS PROJECT GUTENBERG/d'       \
+     | sed -e '/End of Project Gutenberg/,$d'              \
+     > moby
+fi
