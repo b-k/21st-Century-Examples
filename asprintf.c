@@ -1,16 +1,19 @@
+/* Compile with:
+CFLAGS="-g -Wall -std=gnu11 -O3 -DTest_asprintf" make asprintf
+*/
 #ifndef HAVE_ASPRINTF
 #include <stdio.h>  //vsnprintf
 #include <stdlib.h> //malloc
 #include <stdarg.h> //va_start et al
 
-/* The declaration, to put into a .h file.    The __attribute___ tells the compiler to check printf-style type-compliance.
-   It's not C standard, but a lot of compilers supprt it. Just remove it if yours doesn't */
+/* The declaration, to put into a .h file.    The __attribute__ tells the compiler to check printf-style type-compliance.
+   It's not C standard, but a lot of compilers support it. Just remove it if yours doesn't. */
 
 int asprintf(char **str, char* fmt, ...) __attribute__ ((format (printf,2,3)));
 
 
 int asprintf(char **str, char* fmt, ...){
-    va_list argp; 
+    va_list argp;
     va_start(argp, fmt);
     char one_char[1];
     int len = vsnprintf(one_char, 1, fmt, argp);
