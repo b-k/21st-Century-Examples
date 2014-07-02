@@ -1,18 +1,13 @@
 /* Compile with:
-export CFLAGS="-g -Wall -std=gnu11 -O3"  #the usual.
-make na
+CFLAGS="-g -Wall -std=gnu11 -O3 -lm" make na
 */
 #include <stdio.h>
-#include <math.h> //isnan
+#include <math.h> //isnan, NAN, nan
 
 double ref;
 
 double set_na(){
-    if (!ref) {
-        ref=0/0.;
-        char *cr = (char *)(&ref);
-        cr[2]='a';
-    }
+    if (!ref) ref=nan("21");
     return ref;
 }
 

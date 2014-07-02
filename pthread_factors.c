@@ -9,7 +9,7 @@ typedef struct {
     long int *tally;
     int *factor_ct;
     int max, thread_ct, this_thread, mutex_ct;
-    pthread_mutex_t *mutexes ;
+    pthread_mutex_t *mutexes;
 } tally_s;
 
 void *add_tally(void *vin){
