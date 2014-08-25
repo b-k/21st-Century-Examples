@@ -23,9 +23,7 @@ void get_a_function(){
 }
 
 void compile_and_run(){
-    char *run_me;
-    asprintf(&run_me, "c99 -fPIC -shared fn.c -o fn.so");
-    if (system(run_me)!=0){
+    if (system("c99 -fPIC -shared fn.c -o fn.so")!=0){
         printf("Compilation error.");
         return;
     }
