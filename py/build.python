@@ -4,13 +4,13 @@
 # then the usual ./configure; make; sudo make install.
 
 
-if [ -e autodemo ]; then sudo rm -r autodemo; fi
+if [ -e autodemo ]; then rm -r autodemo; fi
 mkdir -p autodemo
 cp ../ideal.h ../ideal.c Makefile.am configure.ac autodemo/
 cd autodemo
 touch NEWS README AUTHORS ChangeLog    #still cheating.
 mkdir py
-cp ../setup.py ../ideal.py.c py/
+cp ../setup.py.in ../ideal.py.c py/
 cp ../Makefile.py.am py/Makefile.am
 
 autoreconf -iv

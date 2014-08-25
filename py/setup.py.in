@@ -2,10 +2,10 @@ from distutils.core import setup, Extension
 
 py_modules= ['pvnrt']
 
-Emodule = Extension('pvnrt',
-       libraries=['pvnrt'],
-       library_dirs=['..'],
-       sources = ['ideal.py.c'])
+Emodule = Extension('pvnrt', ['ideal.py.c']
+        , library_dirs=['@srcdir@/..']
+        , libraries=['pvnrt']
+        )
 
 setup (name = 'pvnrt',
        #provides='pvnrt',
