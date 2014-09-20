@@ -6,7 +6,6 @@ void loops(int max){
         printf("Hello #%i\n", i);
         i++;
     } while (i < max);      //Note the semicolon.
-
 }
 
 int main(){

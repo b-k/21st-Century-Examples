@@ -9,7 +9,6 @@ void matrix_cross_base(double *list1, double *list2){
     int count1 = 0, count2 = 0;
     while (!isnan(list1[count1])) count1++;
     while (!isnan(list2[count2])) count2++;
-    if (!count1 || !count2) {printf("missing data."); return;}
 
     for (int i=0; i<count1; i++){
         for (int j=0; j<count2; j++)

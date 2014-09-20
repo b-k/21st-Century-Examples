@@ -1,7 +1,6 @@
 /* Compile with:
 LDLIBS="-lm -ldl -lreadline" CFLAGS="-g -Wall -std=gnu11 -O3" make dynamic
 */
-#define _GNU_SOURCE  //cause stdio.h to include asprintf
 #include <dlfcn.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -12,12 +11,12 @@ void get_a_function(){
     fprintf(f, "#include <math.h>\n"
                "double fn(double in){\n");
     char *a_line = NULL;
-    char *header = ">>double fn(double in){\n>> ";
+    char *prompt = ">>double fn(double in){\n>> ";
     do {
         free(a_line);
-        a_line = readline(header);
+        a_line = readline(prompt);
         fprintf(f, "%s\n", a_line);
-        header = ">> ";
+        prompt = ">> ";
     } while (strcmp(a_line, "}"));
     fclose(f);
 }

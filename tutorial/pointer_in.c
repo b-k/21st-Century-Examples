@@ -6,7 +6,7 @@ void double_in(int *in){
 }
 
 int main(){
-    int *x= malloc(sizeof(int));
+    int x[1];
     *x= 10;
     double_in(x);
     printf("x now points to %i.\n", *x);

@@ -40,6 +40,7 @@ int main(int argc, char **argv){
 
     char *ucs = localstring_to_utf8(string_from_file(argv[1]));
     Stopif(!ucs, return 1, "Exiting.");
+
     FILE *out = fopen("uout.html", "w");
     Stopif(!out, return 1, "Couldn't open uout.html for writing.");
     fprintf(out, "<head><meta http-equiv=\"Content-Type\" "
@@ -48,6 +49,7 @@ int main(int argc, char **argv){
     fprintf(out, "Its Unicode encoding required %zu bytes.<br>", strlen(ucs));
     fprintf(out, "Here it is, with each space-delimited element on a line "
                  "(with commentary on the first character):<br>");
+
     ok_array *spaced = ok_array_new(ucs, " \n");
     for (int i=0; i< spaced->length; i++, (spaced->elements)++){
         fprintf(out, "%s", *spaced->elements);
