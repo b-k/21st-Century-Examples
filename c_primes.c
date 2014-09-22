@@ -1,3 +1,7 @@
+/* Compile with:
+export CFLAGS="-g -Wall -O3 --std=c11 -pthread -latomic"
+make c_primes
+*/
 #include <stdio.h>
 #include <stdatomic.h>
 #include <stdlib.h>  //malloc

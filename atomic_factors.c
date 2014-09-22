@@ -1,5 +1,6 @@
 #include <omp.h>
 #include <stdio.h>
+#include <stdlib.h> //malloc
 #include <string.h> //memset
 
 #include "openmp_getmax.c"

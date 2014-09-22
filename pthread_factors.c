@@ -1,6 +1,11 @@
+/* Compile with:
+export CFLAGS="-g -Wall -O3 --std=c99 -pthread -fopenmp"
+make pthread_factors
+*/
 #include <omp.h>    //get_max is still OpenMP
 #include <pthread.h>
 #include <stdio.h>
+#include <stdlib.h> //malloc
 #include <string.h> //memset
 
 #include "openmp_getmax.c"

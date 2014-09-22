@@ -1,8 +1,7 @@
 /* Suggested makefile:
 ----------
 P=openmp_atoms
-CFLAGS=`pkg-config --cflags glib-2.0` -g -Wall -std=gnu99 -O3 -fopenmp
-LDLIBS=`pkg-config --libs glib-2.0` -fopenmp
+CFLAGS=-g -Wall -std=gnu99 -O3 -fopenmp
 
 $(P):
 ----------

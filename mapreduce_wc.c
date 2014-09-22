@@ -16,6 +16,7 @@ int main(int argc, char **argv){
     argv++;
     Stopif(!argc, return 0, "Please give some file names on the command line.");
     long int total_wc = 0;
+
     #pragma omp parallel for  \
      reduction(+:total_wc)
     for (int i=0; i< argc; i++){

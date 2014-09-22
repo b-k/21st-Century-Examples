@@ -16,6 +16,7 @@ int main(int argc, char **argv){
     argv++;
     Stopif(!argc, return 0, "Please give some file names on the command line.");
     int count[argc];
+
     #pragma omp parallel for
     for (int i=0; i< argc; i++){
         count[i] = wc(argv[i]);
