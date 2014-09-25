@@ -1,3 +1,5 @@
+/* See compilation notes in atomic_factors.c, openmp_atoms.c, or pthread_factors.c*/
+
 int get_max(int *array, long int max){
     int thread_ct = omp_get_max_threads();
     int maxes[thread_ct];

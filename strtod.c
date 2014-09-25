@@ -1,3 +1,7 @@
+/* Compile with:
+export CFLAGS="-g -Wall -std=gnu11 -O3"  #the usual.
+make strtod
+*/
 #include "stopif.h"
 #include <stdlib.h> //strtod
 #include <math.h>   //pow
