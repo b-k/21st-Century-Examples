@@ -19,8 +19,8 @@ int get_max_factors(_Atomic(int) *factor_ct, long int max){
 }
 
 typedef struct {
-    _Atomic(long int) *tally;
-    _Atomic(int) *factor_ct;
+    _Atomic long int *tally;
+    atomic_int *factor_ct;
     int max, thread_ct, this_thread;
 } tally_s;
 

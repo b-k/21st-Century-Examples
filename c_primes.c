@@ -14,7 +14,7 @@ typedef struct {
     long int max;
 } prime_s;
 
-int add_a_prime(_Atomic (prime_s) *pin, long int new_prime){
+int add_a_prime(_Atomic prime_s *pin, long int new_prime){
     prime_s p = atomic_load(pin);
     p.length++;
     p.plist = realloc(p.plist, sizeof(long int) * p.length);
@@ -27,7 +27,7 @@ int add_a_prime(_Atomic (prime_s) *pin, long int new_prime){
 
 typedef struct{
     long int i;
-    _Atomic (prime_s) *prime_list;
+    _Atomic prime_s *prime_list;
     pthread_mutex_t *mutex;
 } test_s;
 
@@ -57,7 +57,7 @@ void* test_a_number(void *vin){
 
 int main(){
     prime_s inits = {.plist=NULL, .length=0, .max=0};
-    _Atomic (prime_s) prime_list = ATOMIC_VAR_INIT(inits);
+    _Atomic prime_s prime_list = ATOMIC_VAR_INIT(inits);
 
     pthread_mutex_t m;
     pthread_mutex_init(&m, NULL);
