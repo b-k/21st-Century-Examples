@@ -41,5 +41,6 @@ dictionary *dictionary_copy(dictionary *in){
 void dictionary_free(dictionary *in){
     for (int i=0; i< in->length; i++)
         keyval_free(in->pairs[i]);
+    free(in->pairs);
     free(in);
 }
