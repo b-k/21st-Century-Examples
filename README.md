@@ -3,7 +3,7 @@
 
 Dear Reader,
 
-Here are all of the examples from _21st Century C_ by Ben Klemens [ http://tinyurl.com/C-for-moderns ]. You'll notice that the captions for all of the examples in the text end in a filename in parens, like (string_utilities.c); that name is referring to the file here.
+Here are all of the examples from the second edition of _21st Century C_ by Ben Klemens [ http://tinyurl.com/c-for-moderns-2 ]. You'll notice that the captions for all of the examples in the text end in a filename in parens, like (string_utilities.c); that name is referring to the file here.
 
 * Each .c file has a note about how to compile it. Some involve a makefile, and some have a command or two to cut/paste onto your command line. dict_use.c includes an extensive script that runs autoconf on the system.
 
