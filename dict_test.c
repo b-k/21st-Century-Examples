@@ -44,7 +44,6 @@ void test_copy(dfixture *df, gconstpointer ignored){
 }
 
 void test_failure(){
-    //g_test_trap_subprocess(NULL, 0, G_TEST_TRAP_SILENCE_STDOUT | G_TEST_TRAP_SILENCE_STDERR);
     if (g_test_subprocess()){ //we are in the sub-test.
         dictionary *dd = dictionary_new();
         dictionary_add(dd, NULL, "blank");
