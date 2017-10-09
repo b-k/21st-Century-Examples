@@ -1,5 +1,6 @@
 /* Compile with:
 export CFLAGS="-g -Wall -O3 --std=c11 -pthread -latomic"
+export LDLIBS="-lm"
 make c_primes
 */
 #include <stdio.h>
@@ -7,6 +8,7 @@ make c_primes
 #include <stdlib.h>  //malloc
 #include <stdbool.h>
 #include <pthread.h>
+#include <math.h> //sqrt
 
 typedef struct {
     long int *plist;
@@ -40,7 +42,7 @@ void* test_a_number(void *vin){
     } while (pview.max*2 < i);
 
     bool is_prime = true;
-    for (int j=0; j < pview.length; j++)
+    for (int j=0; j <  pview.length && pview.plist[j] <= sqrt(i); j++)
         if (!(i % pview.plist[j])){
             is_prime = false;
             break;
