@@ -1,7 +1,6 @@
     push:
-        @if [ "x$(MSG)" = 'x' ] ; then \
-                echo "Usage: MSG='your message here.' make push"; fi
-        @test "x$(MSG)" != 'x'
+        @if [ -z "$(MSG)" ]; then \
+                echo "Usage: MSG='your message here.' make push"; false; fi
         git commit -a  -m "$(MSG)"
         git svn fetch
         git svn rebase
