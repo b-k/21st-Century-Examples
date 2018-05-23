@@ -22,7 +22,7 @@ Here's the GNU sed command to do the changes on every .c file in the current dir
     #For Clang and icc, which don't need the -std=... flag at all:
     sed -i -e 's/-std=gnu11//g' *.c
 
-* If you get linker errors about resolving the (common but not C-standard) function asprintf, use the libiberty library, which means adding the -liberty flag to your LDLIBS. For example, MSYS includes libiberty as part of its development package. As a last resort, I have provided the source code for asprintf here.
+* If you get linker errors about resolving the (common but not C-standard) function asprintf, use the version provided as an example in asprintf.c, and the function declaration in that file. Or use the libiberty library, which means adding the -liberty flag to your LDLIBS. For example, MSYS includes libiberty as part of its development package.
 
 Have fun with them,
 
