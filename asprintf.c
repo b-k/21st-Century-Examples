@@ -20,6 +20,7 @@ int asprintf(char **str, char* fmt, ...){
     if (len < 1){
         fprintf(stderr, "An encoding error occurred. Setting the input pointer to NULL.\n");
         *str = NULL;
+        va_end(argp);
         return len;
     }
     va_end(argp);
@@ -41,12 +42,15 @@ int main(){
     char *s;
     asprintf(&s, "hello, %s.", "—Reader—");
     printf("%s\n", s);
+    free(s);
 
     asprintf(&s, "%c", '\0');
     printf("blank string: [%s]\n", s);
+    free(s);
 
     int i = 0;
     asprintf(&s, "%i", i++);
     printf("Zero: %s\n", s);
+    free(s);
 }
 #endif
