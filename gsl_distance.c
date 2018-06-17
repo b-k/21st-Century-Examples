@@ -12,7 +12,7 @@ double one_dist(gsl_vector *v1, void *v2){
 
 long double distance(apop_data *data, apop_model *model){
     gsl_vector *target = model->parameters->vector;
-    return -apop_map_sum(data, .fn_vp=one_dist, .param=target, .part='r');
+    return -apop_map_sum(data, .fn_vp=one_dist, .param=target);
 }
 
 apop_model *min_distance= &(apop_model){
@@ -25,9 +25,8 @@ int main(){
                             2.9, 8.6,
                             -1.3, 3.7,
                             2.9, 1.1);
-    Apop_model_add_group(min_distance, apop_mle, .method= APOP_SIMPLEX_NM,
+    Apop_model_add_group(min_distance, apop_mle, .method= "NM simplex",
                                                   .tolerance=1e-5);
-    Apop_model_add_group(min_distance, apop_parts_wanted);
-    apop_model *est=apop_estimate(locations, min_distance);
+    apop_model *est = apop_estimate(locations, min_distance);
     apop_model_show(est);
 }

@@ -15,7 +15,7 @@ dictionary *dictionary_new (void){
 
 static void dictionary_add_keyval(dictionary *in, keyval *kv){
     in->length++;
-    in->pairs = realloc(in->pairs, sizeof(keyval*)*in->length);
+    in->pairs = realloc(in->pairs, in->length*sizeof(keyval*));
     in->pairs[in->length-1] = kv;
 }
 
@@ -41,5 +41,6 @@ dictionary *dictionary_copy(dictionary *in){
 void dictionary_free(dictionary *in){
     for (int i=0; i< in->length; i++)
         keyval_free(in->pairs[i]);
+    free(in->pairs);
     free(in);
 }

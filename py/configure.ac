@@ -14,5 +14,5 @@ if test "$PYTHON" != : ; then
 AC_CONFIG_SUBDIRS([py])
 fi
 
-AC_CONFIG_FILES([Makefile py/Makefile])
+AC_CONFIG_FILES([Makefile py/Makefile py/setup.py])
 AC_OUTPUT

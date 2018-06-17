@@ -2,7 +2,7 @@
 ----------
   #Or, use the script in dict_use.c to use as an Autotools build check.
 CFLAGS=-g -Wall -O3 `pkg-config --cflags glib-2.0`
-LDADD=`pkg-config --libs glib-2.0`
+LDLIBS=`pkg-config --libs glib-2.0`
 
 dict_test: dict.o keyval.o
 ----------
@@ -44,10 +44,11 @@ void test_copy(dfixture *df, gconstpointer ignored){
 }
 
 void test_failure(){
-    if (g_test_trap_fork(0, G_TEST_TRAP_SILENCE_STDOUT | G_TEST_TRAP_SILENCE_STDERR)){
+    if (g_test_subprocess()){ //we are in the sub-test.
         dictionary *dd = dictionary_new();
         dictionary_add(dd, NULL, "blank");
     }
+    g_test_trap_subprocess(NULL, 0, 0);
     g_test_trap_assert_failed();
     g_test_trap_assert_stderr("NULL is not a valid key.\n");
 }

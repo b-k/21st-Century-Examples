@@ -1,5 +1,5 @@
 /* Compile with:
-make LDLIBS='-lm' CFLAGS="-g -Wall -std=gnu11 -fms-extensions" seamlesstwo
+make LDLIBS='-lm' CFLAGS="-g -Wall -std=gnu11" seamlessthree
 */
 #include <stdio.h>
 #include <math.h>
@@ -10,7 +10,9 @@ typedef struct point {
 
 typedef struct {
     union {
-        struct point;
+        struct {
+           double x, y;
+        };
         point p2;
     };
     double z;

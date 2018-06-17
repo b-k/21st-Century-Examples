@@ -3,7 +3,7 @@
 
 Dear Reader,
 
-Here are all of the examples from _21st Century C_ by Ben Klemens [ http://tinyurl.com/C-for-moderns ]. You'll notice that the captions for all of the examples in the text end in a filename in parens, like (string_utilities.c); that name is referring to the file here.
+Here are all of the examples from the second edition of _21st Century C_ by Ben Klemens [ http://tinyurl.com/c-for-moderns-2 ]. You'll notice that the captions for all of the examples in the text end in a filename in parens, like (string_utilities.c); that name is referring to the file here.
 
 * Each .c file has a note about how to compile it. Some involve a makefile, and some have a command or two to cut/paste onto your command line. dict_use.c includes an extensive script that runs autoconf on the system.
 
@@ -22,7 +22,7 @@ Here's the GNU sed command to do the changes on every .c file in the current dir
     #For Clang and icc, which don't need the -std=... flag at all:
     sed -i -e 's/-std=gnu11//g' *.c
 
-* If you get linker errors about resolving the (common but not C-standard) function asprintf, use the libiberty library, which means adding the -liberty flag to your LDLIBS. For example, MSYS includes libiberty as part of its development package. As a last resort, I have provided the source code for asprintf here.
+* If you get linker errors about resolving the (common but not C-standard) function asprintf, use the version provided as an example in asprintf.c, and the function declaration in that file. Or use the libiberty library, which means adding the -liberty flag to your LDLIBS. For example, MSYS includes libiberty as part of its development package.
 
 Have fun with them,
 

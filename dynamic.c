@@ -1,7 +1,6 @@
 /* Compile with:
 LDLIBS="-lm -ldl -lreadline" CFLAGS="-g -Wall -std=gnu11 -O3" make dynamic
 */
-#define _GNU_SOURCE  //cause stdio.h to include asprintf
 #include <dlfcn.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -12,25 +11,23 @@ void get_a_function(){
     fprintf(f, "#include <math.h>\n"
                "double fn(double in){\n");
     char *a_line = NULL;
-    char *header = ">>double fn(double in){\n>> ";
+    char *prompt = ">>double fn(double in){\n>> ";
     do {
         free(a_line);
-        a_line = readline(header);
+        a_line = readline(prompt);
         fprintf(f, "%s\n", a_line);
-        header = ">> ";
+        prompt = ">> ";
     } while (strcmp(a_line, "}"));
     fclose(f);
 }
 
 void compile_and_run(){
-    char *run_me;
-    asprintf(&run_me, "c99 -fPIC -shared fn.c -o fn.so");
-    if (system(run_me)!=0){
+    if (system("c99 -fPIC -shared fn.c -o fn.so")!=0){
         printf("Compilation error.");
         return;
     }
 
-    void *handle = dlopen("fn.so", RTLD_LAZY);
+    void *handle = dlopen("./fn.so", RTLD_LAZY);
     if (!handle) printf("Failed to load fn.so: %s\n", dlerror());
 
     typedef double (*fn_type)(double);

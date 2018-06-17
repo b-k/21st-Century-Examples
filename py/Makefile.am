@@ -1,5 +1,5 @@
-pyexec_LTLIBRARIES=libpvnrt.la
-libpvnrt_la_SOURCES=ideal.c
+pyexec_LIBRARIES=libpvnrt.a
+libpvnrt_a_SOURCES=ideal.c
 
 SUBDIRS=.
 
