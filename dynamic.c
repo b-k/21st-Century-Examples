@@ -27,7 +27,7 @@ void compile_and_run(){
         return;
     }
 
-    void *handle = dlopen("fn.so", RTLD_LAZY);
+    void *handle = dlopen("./fn.so", RTLD_LAZY);
     if (!handle) printf("Failed to load fn.so: %s\n", dlerror());
 
     typedef double (*fn_type)(double);
