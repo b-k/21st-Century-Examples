@@ -1,6 +1,13 @@
 /* Compile with:
-CFLAGS="-g -Wall -std=gnu11 -O3" make stddev
+CFLAGS="-g -Wall -std=gnu11 -O3" make stddev_bugged
 */
+
+
+//WARNING: This program is incorrect, intended for a debugging example.
+//See stddev.c for the correct version.
+
+
+
 #include <math.h>
 #include <stdio.h> //size_t
 
@@ -12,7 +19,7 @@ meanvar mean_and_var(const double *data){
     long double ratio;
     size_t count= 0;
     for(size_t i=0;  !isnan(data[i]); i++){
-        ratio = count/(count+1.0);
+        ratio = count/(count+1);
         count ++;
         avg   *= ratio;
         avg2  *= ratio;
