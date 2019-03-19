@@ -8,7 +8,7 @@ typedef struct {
     int months, selloff_month;
     _Bool show_table;
     double interest, interest_pv, monthly_payment, years_to_payoff;
-    char *error;
+    char const *error;
 } amortization_s;
 
 

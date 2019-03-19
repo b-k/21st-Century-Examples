@@ -10,7 +10,7 @@ typedef struct {
     double width, height;
 } size_s;
 
-size_s width_height(char *papertype){
+size_s width_height(char const *papertype){
   return
     !strcasecmp(papertype, "A4")     ? (size_s) {.width=210, .height=297}
   : !strcasecmp(papertype, "Letter") ? (size_s) {.width=216, .height=279}

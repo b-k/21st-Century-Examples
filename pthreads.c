@@ -15,14 +15,14 @@ $(P): $(objects)
 
 typedef struct{
     int wc;
-    char *docname;
+    char const *docname;
 } wc_struct;
 
 void *wc(void *voidin){
     wc_struct *in = voidin;
     char *doc = string_from_file(in->docname);
     if (!doc) return NULL;   // in->wc remains zero.
-    char *delimiters = " `~!@#$%^&*()_-+={[]}|\\;:\",<>./?\n";
+    char const *delimiters = " `~!@#$%^&*()_-+={[]}|\\;:\",<>./?\n";
     ok_array *words = ok_array_new(doc, delimiters);
     if (!words) return NULL;
     in->wc = words->length;

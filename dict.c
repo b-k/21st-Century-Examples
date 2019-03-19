@@ -19,7 +19,7 @@ static void dictionary_add_keyval(dictionary *in, keyval *kv){
     in->pairs[in->length-1] = kv;
 }
 
-void dictionary_add(dictionary *in, char *key, void *value){
+void dictionary_add(dictionary *in, char const *key, void const *value){
     if (!key){fprintf(stderr, "NULL is not a valid key.\n"); abort();}
     dictionary_add_keyval(in, keyval_new(key, value));
 }

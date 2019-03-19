@@ -3,7 +3,7 @@ struct filestruct;
 typedef void (*level_fn)(struct filestruct path);
 
 typedef struct filestruct{
-    char *name, *fullname;
+    char const *name, *fullname;
     level_fn directory_action, file_action;
     int depth, error;
     void *data;

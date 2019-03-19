@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void error_print(FILE *ef, int error_code, char *msg){
+void error_print(FILE *ef, int error_code, char const *msg){
     fprintf(ef, "Error #%i occurred: %s.\n", error_code, msg);
 }
 

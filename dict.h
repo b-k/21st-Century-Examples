@@ -11,5 +11,5 @@ typedef struct dictionary{
 dictionary *dictionary_new (void);
 dictionary *dictionary_copy(dictionary *in);
 void dictionary_free(dictionary *in);
-void dictionary_add(dictionary *in, char *key, void *value);
+void dictionary_add(dictionary *in, char const *key, void const *value);
 void *dictionary_find(dictionary const *in, char const *key);

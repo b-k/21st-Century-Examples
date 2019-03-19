@@ -5,7 +5,7 @@ CFLAGS="-g -Wall -std=gnu11 -O3" make print_dispatch
 #include "print_methods.c"
 
 textlist_s recipe = {.title="Starfish and Coffee",
-     .len=2, .items=(char*[]){"Starfish", "Coffee"}};
+     .len=2, .items=(char const*[]){"Starfish", "Coffee"}};
 
 void textlist_print(textlist_s *in){
     if (in->print){

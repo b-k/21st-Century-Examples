@@ -26,7 +26,7 @@ void *wc(void *voidin){
     if (!doc) return NULL;
     static GMutex count_lock;
 
-    char *delimiters = " `~!@#$%^&*()_-+={[]}|\\;:\",<>./?\n\t";
+    char const *delimiters = " `~!@#$%^&*()_-+={[]}|\\;:\",<>./?\n\t";
     ok_array *words = ok_array_new(doc, delimiters);
     if (!words) return NULL;
     in->wc = words->length;

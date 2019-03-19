@@ -26,7 +26,7 @@ void print_file(filestruct in){
 }
 
 int main(int argc, char **argv){
-    char *start = (argc>1) ? argv[1] : ".";
+    char const *start = (argc>1) ? argv[1] : ".";
     printf("Tree for %s:\n", start ? start: "the current directory");
     process_dir(.name=start, .file_action=print_file, .directory_action=print_dir);
 }

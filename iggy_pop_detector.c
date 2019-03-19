@@ -12,5 +12,5 @@ bool check_name(char const **in){
 
 int main(int argc, char **argv){
     if (argc < 2) return 0;
-    return check_name(&argv[1]);
+    return check_name((char const **)&argv[1]);
 }

@@ -42,10 +42,10 @@ installed for this to work.
 
 //These have in-line Doxygen documentation. The < points to the prior text
 //being documented.
-char *rss_url = "http://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml";
+char const *rss_url = "http://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml";
                                       /**< The URL for an NYT RSS. */
-char *rssfile = "nytimes_feeds.rss";  /**< A local file to write the RSS to.*/
-char *outfile = "now.html";       /**< The output file to open in your browser.*/
+char const *rssfile = "nytimes_feeds.rss";  /**< A local file to write the RSS to.*/
+char const *outfile = "now.html";       /**< The output file to open in your browser.*/
 
 /** Print a list of headlines in HTML format to the outfile, which is overwritten.
 
@@ -69,8 +69,8 @@ the XPath for the links. Then, it will write those to the outfile.
   \param infile The RSS file in.
 */
 int parse(char const *infile){
-    const xmlChar *titlepath= (xmlChar*)"//item/title";
-    const xmlChar *linkpath= (xmlChar*)"//item/link";
+    const xmlChar *titlepath= (const xmlChar*)"//item/title";
+    const xmlChar *linkpath= (const xmlChar*)"//item/link";
 
     xmlDocPtr doc = xmlParseFile(infile);
     Stopif(!doc, return -1, "Error: unable to parse file \"%s\"\n", infile);

@@ -3,7 +3,7 @@
 #include <strings.h> //strcasecmp (from POSIX)
 #include "keyval.h"
 
-keyval *keyval_new(char *key, void *value){
+keyval *keyval_new(char const *key, void const *value){
     keyval *out = malloc(sizeof(keyval));
     *out = (keyval){.key = key, .value=value};
     return out;

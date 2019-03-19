@@ -5,7 +5,7 @@ make boxes
 #include <stdio.h>
 
 typedef struct {
-    char *name;
+    char const *name;
     int left, right, up, down;
 } direction_s;
 

@@ -5,7 +5,7 @@ make intptr CFLAGS="-g -Wall -std=gnu11"
 #include <stdint.h> //intptr_t
 
 int main(){
-    char *astring = "I am somwhere in memory.";
+    char const *astring = "I am somwhere in memory.";
     intptr_t location = (intptr_t)astring;
-    printf("%s\n", (char*)location);
+    printf("%s\n", (char const *)location);
 }

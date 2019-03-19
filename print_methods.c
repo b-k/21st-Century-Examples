@@ -17,12 +17,12 @@ static void print_song(textlist_s *in){
 }
 
 textlist_s save = {.title="God Save the Queen",
-     .len=3, .items=(char*[]){
+     .len=3, .items=(char const *[]){
     "There's no future", "No future", "No future for me."},
     .print=print_song};
 
 textlist_s spend = {.title="Never mind the Bollocks LP",
-    .items=(char*[]){"By the Sex Pistols", "Anti-consumption themes"},
+    .items=(char const *[]){"By the Sex Pistols", "Anti-consumption themes"},
     .len=2, .print=print_ad};
 
 #ifndef skip_main

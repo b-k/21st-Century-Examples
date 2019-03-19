@@ -9,10 +9,10 @@ CFLAGS="-g -Wall -std=gnu11 -O3 -DTest_asprintf" make asprintf
 /* The declaration, to put into a .h file.    The __attribute__ tells the compiler to check printf-style type-compliance.
    It's not C standard, but a lot of compilers support it. Just remove it if yours doesn't. */
 
-int asprintf(char **str, char* fmt, ...) __attribute__ ((format (printf,2,3)));
+int asprintf(char **str, char const * fmt, ...) __attribute__ ((format (printf,2,3)));
 
 
-int asprintf(char **str, char* fmt, ...){
+int asprintf(char **str, char const* fmt, ...){
     va_list argp;
     va_start(argp, fmt);
     char one_char[1];

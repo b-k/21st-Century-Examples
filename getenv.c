@@ -11,10 +11,10 @@ reps=20 msg=" " ./getenv
 #include <stdio.h>  //printf
 
 int main(){
-    char *repstext = getenv("reps");
+    char const *repstext = getenv("reps");
     int reps = repstext ? atoi(repstext) : 10;
 
-    char *msg = getenv("msg");
+    char const *msg = getenv("msg");
     if (!msg) msg = "Hello.";
 
     for (int i=0; i< reps; i++)

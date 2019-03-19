@@ -11,7 +11,7 @@ void get_a_function(){
     fprintf(f, "#include <math.h>\n"
                "double fn(double in){\n");
     char *a_line = NULL;
-    char *prompt = ">>double fn(double in){\n>> ";
+    char const *prompt = ">>double fn(double in){\n>> ";
     do {
         free(a_line);
         a_line = readline(prompt);

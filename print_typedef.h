@@ -2,8 +2,8 @@
 #define textlist_s_h
 
 typedef struct textlist_s {
-    char *title;
-    char **items;
+    char const *title;
+    char const **items;
     int len;
     void (*print)(struct textlist_s*);
 } textlist_s;
