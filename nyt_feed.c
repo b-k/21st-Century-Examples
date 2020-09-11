@@ -42,7 +42,7 @@ installed for this to work.
 
 //These have in-line Doxygen documentation. The < points to the prior text
 //being documented.
-char *rss_url = "http://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml";
+char *rss_url = "https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml";
                                       /**< The URL for an NYT RSS. */
 char *rssfile = "nytimes_feeds.rss";  /**< A local file to write the RSS to.*/
 char *outfile = "now.html";       /**< The output file to open in your browser.*/
