@@ -4,6 +4,7 @@ LDLIBS="-lm -ldl -lreadline" CFLAGS="-g -Wall -std=gnu11 -O3" make dynamic
 #include <dlfcn.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <readline/readline.h>
 
 void get_a_function(){
